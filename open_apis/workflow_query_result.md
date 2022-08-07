@@ -231,7 +231,6 @@ curl  'https://api.advai.net//onestop-management/case/caseNodeList?caseId=' \
               "score": 52.0
             },
             {
-            {
               "filedName": "TU_LEG",
               "score": 46.0
             }
