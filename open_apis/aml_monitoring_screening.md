@@ -2,9 +2,15 @@
 
 # Description
 `amlScreeningAndMonitoring` enables customers to screen and monitor a user's risk level. It provides two modes: 
-- a single Anti-money Laundering (AML) check, and 
-- a single AML check and then adding it to a monitoring list for periodicity aml check.
+- a single Anti-money Laundering (AML) screening, and 
+- a single AML screening and then adding it to a monitoring list for periodicity AML check.
 
+In the *screening* mode, OSP will do one screening operation, and add the user (identified by `referenceId`) into profile list (or update if the user already exists) when the user (i.e., `referenceId`) is provided. OSP also generates a case if the screening result shows that the user matches AML list.
+
+In the *ScreeningMonitoring* mode, OSP adds the user to the monitoring list if
+- none of matched profiles.
+- the transaction produces a `auto-approved` decision result.
+Once a user(i.e., `referenceId`) is added to the monitoring list, OSP schedules tasks to screening the user, and updated its risk level correspondingly. 
 
 
 # Request
@@ -16,8 +22,8 @@
 ## Request Headers
 | field name           | description                                     |
 |:------------------|:------------------------------------------------|
-| access-key        | access-key for authentication. Ask our supporter for it when setup your account                                |
-| content-type      | application/json;charset=UTF-8                       |
+| X-ADVAI-KEY        | access-key for authentication. Ask our supporter for it when setup your account                                |
+| Content-Type      | application/json;charset=UTF-8                       |
 
 
 ## Request Body
@@ -47,7 +53,7 @@
 ## domain
 | domain            | description                                     |
 |:------------------|:------------------------------------------------|
-| sandbox-oop.advai.net | Sandbox Environment                                |
+| api.advai.net | Sandbox Environment                                |
 
 
 
@@ -67,10 +73,10 @@
 ## Request:
 ```shell
 
-curl --location --request POST 'https://uat-oop.advai.net/intl/openapi/monitoring/AMLScreeningAndMonitoring' \
+curl --location --request POST 'https://api.advai.net/intl/openapi/monitoring/AMLScreeningAndMonitoring' \
 --header 'Content-type: application/json' \
---header 'x-organization-id: 9' \
---header 'x-account-id: 10' \
+--header 'X-ADVAI-KEY: XXXXXXXXXX' \
+'
 --data-raw '{                                 
   "name": "David",                    
   "type": [                           
