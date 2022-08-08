@@ -31,7 +31,7 @@ Regardless of screening and monitoring modes, OSP would add the current user to 
 
 # Request
 
-- URI: https://{domain}/intl/openapi/monitoring/AMLScreeningAndMonitoring
+- URI: https://{domain}/intl/openapi/monitoring/amlScreeningAndMonitoring
 
 - HTTP METHOD: post
 
@@ -78,7 +78,7 @@ Regardless of screening and monitoring modes, OSP would add the current user to 
 ## Request:
 ```shell
 
-curl --location --request POST 'https://api.advai.net/intl/openapi/monitoring/AMLScreeningAndMonitoring' \
+curl --location --request POST 'https://api.advai.net/intl/openapi/monitoring/amlScreeningAndMonitoring' \
 --header 'Content-type: application/json' \
 --header 'X-ADVAI-KEY: XXXXXXXXXX' \
 '
