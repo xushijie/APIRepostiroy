@@ -43,9 +43,7 @@ The field `fullMarksNum` in the response is the number of matched profiles, and 
 
 
 
-## Response
-
-
+### Response
 | name              | type   |    description                                            |
 |:------------------|:-------|:-------------------------------------------------------|
 | code              | String |  SUCCESS:deal request success  ERROR: deal request fail |
