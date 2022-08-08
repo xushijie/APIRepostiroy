@@ -11,19 +11,19 @@ There are two concepts with this API
 - *User Profile list* A profile, identified by `referenceId` in OSP represents a user, by a number of fields, such as name, age, address, id number.
 
 ## Screening Mode
-OSP only conducts one screening operation. In this case, OSP also generates a case if some profiles are matched. 
+OSP only conducts one screening operation. In this case, OSP also generates a case if there exists a matched profile. 
 
 ## Screening and Monitoring Mode
-OSP conducts one screening opreation, and adds the user to the monitor list depending on the sceening result. The rules are 
+OSP first conducts one screening opreation, and adds the user to the monitor list depending on the sceening result. The effects of screening result are shown in the following table
 
-| Matched Profiles| Generate Case   |  Case Result   | Add to the monitoring list             |
+| Matched Profiles| Generate Case   |  Case Decision   | Add to the monitoring list             |
 |:----------------|:----------------|:---------------|:---------------------------------------|
-| none            |no case, and set transaction to `auto approve`              | n |  y | 
-| y               |y                | Approve case manually    |  y  | 
-| y               |y                | Reject case manually     |  n, and remove from monitoring list if necessary| 
+| none            |no case, and set transaction to `auto approve`              |  |  y | 
+| y               |y                | Approve manually    |  y  | 
+| y               |y                | Reject  manually     |  n, and remove from monitoring list if necessary| 
 
 
-Regardless of screening and monitoring modes, OSP would add the current user to our proflie list if `referenceId` is provided.
+Regardless of screening and monitoring modes, OSP would add the current user to our profile list if `referenceId` is provided.
 
 
 # Request
@@ -68,18 +68,6 @@ Regardless of screening and monitoring modes, OSP would add the current user to 
 |:------------------|:------------------------------------------------|
 | api.advai.net | Sandbox Environment                                |
 
-
-
-```json
-{
-    "code":"SUCCESS",
-    "message":"OK",
-    "data":null,
-    "extra":null,
-    "transactionId":"e66542183ca218ba",
-    "pricingStrategy":"PAY"
-}
-```
 
 # Example
 
