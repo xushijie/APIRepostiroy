@@ -1,16 +1,29 @@
 
-
+**WIP**
 # Description
 `amlScreeningAndMonitoring` enables customers to screen and monitor a user's risk level. It provides two modes: 
 - a single Anti-money Laundering (AML) screening, and 
-- a single AML screening and then adding it to a monitoring list for periodicity AML check.
+- a single AML screening and add it to the monitoring list for periodical screening.
 
-In the *screening* mode, OSP will do one screening operation, and add the user (identified by `referenceId`) into profile list (or update if the user already exists) when the user (i.e., `referenceId`) is provided. OSP also generates a case if the screening result shows that the user matches AML list.
+There are two concepts with this API
+- *Monitoring List* A user list to be screened periodically. 
 
-In the *ScreeningMonitoring* mode, OSP adds the user to the monitoring list if
-- none of matched profiles.
-- the transaction produces a `auto-approved` decision result.
-Once a user(i.e., `referenceId`) is added to the monitoring list, OSP schedules tasks to screening the user, and updated its risk level correspondingly. 
+- *User Profile list* A profile, identified by `referenceId` in OSP represents a user, by a number of fields, such as name, age, address, id number.
+
+## Screening Mode
+OSP only conducts one screening operation. In this case, OSP also generates a case if some profiles are matched. 
+
+## Screening and Monitoring Mode
+OSP conducts one screening opreation, and adds the user to the monitor list depending on the sceening result. The rules are 
+
+| Matched Profiles| Generate Case   |  Case Result   | Add to the monitoring list             |
+|:----------------|:----------------|:---------------|:---------------------------------------|
+| none            |no case, and set transaction to `auto approve`              | n |  y | 
+| y               |y                | Approve case manually    |  y  | 
+| y               |y                | Reject case manually     |  n, and remove from monitoring list if necessary| 
+
+
+Regardless of screening and monitoring modes, OSP would add the current user to our proflie list if `referenceId` is provided.
 
 
 # Request
