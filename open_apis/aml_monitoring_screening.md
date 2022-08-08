@@ -22,8 +22,8 @@ OSP first conducts one screening opreation, and adds the user to the monitor lis
 | y               |y*                | Approve manually    |  y  | 
 | y               |y*                | Reject  manually     |  n, and remove from monitoring list if necessary| 
 
-The rules to generate a case for the current transaction in this mode are: 
-- Changes when any of fields(i.e., `primary_name`, `icon_hints`, `timestamp`, new matched profiles) in the monitoring result, when compared to previous one for the profile.
+Rules for case generation in this mode are: 
+- Existence of any change in the fields (i.e., `primary_name`, `icon_hints`, `timestamp`, new matched profiles), when comparing screening result to the previous one for the current profile.
 - Absence of user profile information.
 
 Regardless of screening and monitoring modes, OSP would add the current user to our profile list if `referenceId` is provided.
