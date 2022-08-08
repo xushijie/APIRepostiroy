@@ -38,7 +38,7 @@ Regardless of screening and monitoring modes, OSP would add the current user to 
 ## Request Headers
 | field name           | description                                     |
 |:------------------|:------------------------------------------------|
-| X-ADVAI-KEY        | access-key for authentication. Ask our supporter for it when setup your account                                |
+| X-ADVAI-KEY        | access-key for authentication. Ask our operation team when setuping your account                                |
 | Content-Type      | application/json;charset=UTF-8                       |
 
 
@@ -70,6 +70,7 @@ Regardless of screening and monitoring modes, OSP would add the current user to 
 | domain            | description                                     |
 |:------------------|:------------------------------------------------|
 | api.advai.net | Sandbox Environment                                |
+| api.advance.ai | PROD Environment in Indonesia                               |
 
 
 # Example

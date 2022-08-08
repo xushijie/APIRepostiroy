@@ -1,36 +1,35 @@
 
+# AML Screening 
 
-# AML Screening and Monitoring
+## Description
 
-# Description
-Similar to the [AML Screening](), this API conducting one screening, and may produce a transaction for monitoring operation. 
+This API enables customers to screen a user's risk, including money launders, Frauds, PEPs(Politically Exposed Persons) and Terrorists, based on Dow Jones's AML service. It 
+- collects a list of matched entities/persons that relates to the input user;
+- filters entities by score similarity, and fetches profiles with similarity score greater than the threshold.
 
-In the implementaton, it encapsulates [AML Screening](), but accepts more parameters, such as `mode` and `referenceId`. These new added parameters would be appended to the transaction, and indicate OSP to generates new cases and monitoring tasks. 
-
-The effect of calling this API in different scenarios are list the table 
-
-| Scenario           | Description     |  Transaction Generation| Case Generation       |  Monitoring Task Generation | 
-|:------------------|:----------------|:--------------------------|:------|: ---------------------- |
-| API Call          |                 | No transaction            | No      | No                      |
-| Use in Workflow   |                 | Y                         | Maybe      | Maybe  | 
-| Use in API Router |                 | Y                         | Maybe            | Maybe           |
-
-Refer [amlScreeningAndMonitoring](https://github.com/Onestop-advanceAI/APIRepostiroy/blob/master/open_apis/aml_monitoring_screening.md) for detail rules for case and monitoring task generation.
+The field `fullMarksNum` in the response is the number of matched profiles, and `profiles` is the detail matched profile information.
 
 
-# Request
+## Request
 
 - URL: https://{domain}/api-wrapper/api/id/aml-watchlist-combine/callCombine
 - Method: post
 
-## Request Headers
+### Domain
+| domain            | description                                     |
+|:------------------|:------------------------------------------------|
+| sandbox-oop.advai.net | Sandbox Environment                                |
+| id-oop.advance.ai     | PROD Environment in Indonesia                               |
+
+
+### Request Headers
 | field name           | description                                     |
 |:------------------|:------------------------------------------------|
 | access-key        | access-key for authentication. Ask our supporter for it when setup your account                                |
 | content-type      | application/json;charset=UTF-8                       |
 
 
-## Request Body
+### Request Body
 | name        | type     | required | example       | description                                                                                                   |
 |:------------|:-----------|:--------|:--------------|:--------------------------------------------------------------------------------------------------------------|
 | name        | String        | true    | David         | Name of the person or the entity                                                                              |
@@ -40,7 +39,11 @@ Refer [amlScreeningAndMonitoring](https://github.com/Onestop-advanceAI/APIRepost
 | regionList  | String[]      | false   | ["Indonesia"] | List of countries or region names to be searched                                                       |
 | contentList | String[]      | false   | ["SAN"]       | The array format can be any combination of SAN, SIP, PEP, OOL, or OEL                                         |
 
-# Response
+
+
+
+
+## Response
 
 
 | name              | type   |    description                                            |
@@ -65,13 +68,6 @@ Main members for each item in the `data.data` list:
 | attributes[].score | String |  match score                 |
 | attributes[].matched_criteria     | Json |  Match information for this match               |
 
-
-
-## Domain
-| domain            | description                                     |
-|:------------------|:------------------------------------------------|
-| api.advai.net | Sandbox Environment                                |
-| api.advance.ai | PROD Environment in Indonesia                               |
 
 
 # Example

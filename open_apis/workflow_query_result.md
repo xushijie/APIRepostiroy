@@ -1,28 +1,24 @@
 
 **This document is still WIP.**
+
 # Description
 Retrieve a transaction report by `transactionId`. 
 
 # Request
-
-- URI: https://{domain}/intl/openapi/v1/query?transId=
-- URI: https://{domain}/onestop-management/case/caseNodeList?caseId=
-
-
+- URI: https://{domain}/intl/openapi/v1/query
 
 - METHOD: GET
 
 ## Request Headers
 | field name           | description                                     |
 |:------------------|:------------------------------------------------|
-| X-ADVAI-KEY        | access-key for authentication. Ask our supporter for it when setup your account                                |
+| X-ADVAI-KEY        | access-key for authentication.  |
 | Content-Type      | application/json;charset=UTF-8                       |
 
-
-## Request Body
-| name        | type      | require |  description                                                                                                   |
-|:------------|:---------|:--------|:----------------------------------------------------------------------------------------------------|
-| transactionId        | String   | true     | Query transaction detail        |
+## Parameters
+| Parameter Name    | description                                     |
+|:------------------|:------------------------------------------------|
+| transId        | Transaction Id returned when you submit a task.  |
 
 
 ## Response
@@ -44,6 +40,7 @@ Retrieve a transaction report by `transactionId`.
 | domain            | description                                     |
 |:------------------|:------------------------------------------------|
 | api.advai.net | Sandbox Environment                                |
+| api.advance.ai | PROD Environment in Indonesia                               |
 
 
 
@@ -52,9 +49,8 @@ Retrieve a transaction report by `transactionId`.
 ## Request:
 ```shell
 
-curl  'https://api.advai.net//onestop-management/case/caseNodeList?caseId=' \
---header 'Content-type: application/json' \
---header 'X-ADVAI-KEY: XXXXXXXXXX' \
+curl --location --request GET 'https://api.advai.net/intl/openapi/journey/v1/query?transactionId=19d1fa4666fad51b' \
+--header 'X-ADVAI-KEY: XXXXXXXXXXX
 
 ```
 ## Response
