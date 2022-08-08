@@ -41,7 +41,7 @@ To have an idea of parameters, customers can go check the published workflow sum
 ### Request Body
 | name        | type      | require | description   |
 |:------------|:---------|:---------|:----------------------|
-| input       | Map      | true     |                       |
+| input       | Map      | true     | A general parameter input map       |
                                     
 
 ### Response
@@ -52,7 +52,7 @@ To have an idea of parameters, customers can go check the published workflow sum
 | code              | String |  SUCCESS:deal request success  ERROR: deal request fail |
 | message           | String |  "OK" or error tip                                      |
 | data              | String |  Detail response body                                          |
-| data.transId      | String |  transacton id  | 
+| data.transId      | String |  transaction id  | 
 | data.result      | Json[]  | The detail list of entities to be matched   |
 | data.journeyId   | Integer | Workflow id from parameter |  
 | data.status      | String  | Workflow stage. You should get "PROCESSING" | 
