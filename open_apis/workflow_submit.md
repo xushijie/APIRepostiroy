@@ -3,7 +3,7 @@
 # Workflow Task Submission
 
 ## Description
-This API allows customers to submit parameters to the workflow they published in the OSP. 
+This API allows customers to submit parameters to the published workflow in the OSP. 
 
 As a general unified API, it accepts all inputs as a Java map structure, and transforms them into a concreted structure to the selected workflow for execution. This API works as asynchronously, and responses client back a transaction id immediately, while the task is still in progress.
 
