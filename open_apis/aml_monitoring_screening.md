@@ -81,7 +81,6 @@ Regardless of screening and monitoring modes, OSP would add the current user to 
 curl --location --request POST 'https://api.advai.net/intl/openapi/monitoring/amlScreeningAndMonitoring' \
 --header 'Content-type: application/json' \
 --header 'X-ADVAI-KEY: XXXXXXXXXX' \
-'
 --data-raw '{                                 
   "name": "David",                    
   "type": [                           
