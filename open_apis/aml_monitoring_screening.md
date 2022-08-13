@@ -1,39 +1,43 @@
 
 **WIP**
 # Description
-`amlScreeningAndMonitoring` enables customers to screen and monitor a user's risk level. It provides two modes: 
-- a single Anti-money Laundering (AML) screening, and 
-- a single AML screening and add it to the monitoring list for periodical screening.
+**amlScreeningAndMonitoring** enables customers to screen and monitor a user's Anti-Money Laundering (AML) risk level. It provides two modes for a user: 
+- a single AML screening, and 
+- a single AML screening, plus set up a configuration for later periodical check.
 
-There are two concepts with this API
-- *Monitoring List* A user list to be screened periodically. 
+Inherently, two concepts are related with this API:
+- A *Monitoring List* consists of users, each of which will be screened periodically. 
 
-- *User Profile list* A profile, identified by `referenceId` in OSP represents a user, by a number of fields, such as name, age, address, id number.
+- A *User Profile list* is a list of users, and each user is identified by `referenceId`. OSP portrays a user with a number of features, such as name, age, address, and id number.
 
 ## Screening Mode
-OSP only conducts one screening operation. In this case, OSP also generates a case if there exists a matched profile. 
+OSP conducts a single screening and produces a matched profile list. A matched profile is a profile with a greater similarity than the predefined threshold. 
+
+The execution of the API with this mode will generate a case, so that operation team can review it, if there exists a matched profile. Notice you will only get a transaction id when you execute the API in the console(or other HTTP client). To check the detail result, you have login OSP portal, and retrieve the transaction and cases using the transaction id. 
+
+
 
 ## Screening and Monitoring Mode
-OSP first conducts one screening opreation, and adds the user to the monitor list depending on the sceening result. The effects of screening result are shown in the following table
+OSP first conducts one screening, and adds the user to the monitor list depending on the screening result. For the screening, the effect is the same as that is described in screening mode, while the effect of check in the later monitoring tasks is described in the following table
 
 | Matched Profiles| Case Generation   |  Case Decision   | Add to the monitoring list             |
 |:----------------|:----------------|:---------------|:---------------------------------------|
-| none            |no case, and set transaction to `auto approve`              |  |  y | 
-| y               |y*                | Approve manually    |  y  | 
-| y               |y*                | Reject  manually     |  n, and remove from monitoring list if necessary| 
+| none            |no case, and set transaction to `approve`              |  |  y | 
+| y               |`y*`                | Approve manually     |  y  | 
+| y               |`y*`                | Reject  manually     |  n, and remove from monitoring list if necessary| 
 
-Rules for case generation in this mode are: 
-- Existence of any change in the fields (i.e., `primary_name`, `icon_hints`, `timestamp`, new matched profiles), when comparing screening result to the previous one for the current profile.
+Rules for case generation with `y*` are: 
+- Existence of any change in the fields (i.e., `primary_name`, `icon_hints`, `timestamp`, new matched profiles), when comparing check result to the last check result for the user.
 - Absence of user profile information.
 
-Regardless of screening and monitoring modes, OSP would add the current user to our profile list if `referenceId` is provided.
+Regardless of screening and monitoring, OSP would add the current user to our profile list if `referenceId` is provided.
 
 
 # Request
 
-- URI: https://{domain}/intl/openapi/monitoring/amlScreeningAndMonitoring
+- *URI* https://{domain}/intl/openapi/monitoring/amlScreeningAndMonitoring
 
-- HTTP METHOD: post
+- *METHOD* post
 
 ## Request Headers
 | field name           | description                                     |
@@ -45,7 +49,7 @@ Regardless of screening and monitoring modes, OSP would add the current user to 
 ## Request Body
 | name        | type      | require | example       | description                                                                                                   |
 |:------------|:---------|:---------|:--------|:----------------------------------------------------------------------------------------------------|
-| mode        | String   | true     | 1         | Single check or Monitoring.  1 Single check only ；2 Single check  first and do monitoring;                        |
+| mode        | String   | true     | 1         | Single check or Monitoring.  1 for single check only ；2 for monitoring;                        |
 | referenceId | String   | false    | "123"         | Unique identification in your system. `referenceId` is  required when `mode` is 2                             |
 | name        | String   | true     | David         | Name of the person or the entity                                                                              |
 | type        | String[]  | false   | ["Person"]    | List ["Person"] or ["Entity"]                                                                                 |
