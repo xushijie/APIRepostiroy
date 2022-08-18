@@ -1,0 +1,40 @@
+
+<svg fill="none" viewBox="0 0 400 400" width="400" height="400" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+          <style>
+            div[class~="list-table"] > ul {
+            display: table;
+            list-style: none;
+            width: 100%;
+            margin: 1em 0;
+            padding: 0;
+            }
+
+div[class~="list-table"] > ul > li {
+    display: table-row-group;
+}
+
+div[class~="list-table"]  > ul > li:nth-child(even) {
+    background-color: #eee;
+}
+div[class~="list-table"]  > ul > li:nth-child(odd) {
+    background-color: #fff;
+}
+
+div[class~="list-table"] > ul > li > ul {
+    display: table-row;
+}
+
+div[class~="list-table"] > ul > li > ul > li {
+    display: table-cell;
+    padding: 5px;
+}
+
+</style>
+
+
+<h1>HELLO WORLD!</h1>
+</div>
+</foreignObject>
+</svg>

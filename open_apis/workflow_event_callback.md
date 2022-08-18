@@ -1,34 +1,6 @@
-<style>
-  div[class~="list-table"] > ul {
-  display: table;
-  list-style: none;
-  width: 100%;
-  margin: 1em 0;
-  padding: 0;
-}
-
-div[class~="list-table"] > ul > li {
-    display: table-row-group;
-}
-
-div[class~="list-table"]  > ul > li:nth-child(even) {
-    background-color: #eee;
-}
-div[class~="list-table"]  > ul > li:nth-child(odd) {
-    background-color: #fff;
-}
-
-div[class~="list-table"] > ul > li > ul {
-    display: table-row;
-}
-
-div[class~="list-table"] > ul > li > ul > li {
-  display: table-cell;
-  padding: 5px;
-}
-
-</style>
-
+<div align="center">
+    <img src="css.svg" width="400" height="400" alt="css-in-readme">
+</div>
 
 # Workflow Event Callback 
 
