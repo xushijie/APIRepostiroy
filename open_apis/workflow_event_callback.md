@@ -22,7 +22,7 @@ The callback method should also be a **idempotent**, as OSP might retry to push 
 ## How to setup Callback with us
 To setup callback, contact our engineer and provide the form
 
-|  Application Form   |
+|  Application Form   ||
 |:------------|:----------------------|
 | login name         |      |
 | Notification Type      |        |
@@ -69,6 +69,14 @@ Currently, we only supports static access-key for authentication. If you have mo
 <div align="center">
     <img src="css.svg" width="400" height="400" alt="css-in-readme">
 </div>
+
+
+|Notification Type|  Description|
+|:------------|:------------|
+|**NODE_EVENT** | id <span style="color:grey">Integer</span> Node id number in the workflow (This is only unique in a single workflow).|
+|**WORKFLOW_EVENT** |Jumio’s reference number of the enrollment transaction (ID)|
+|**TRANSACTION_EVENT** |Possible values:<br>• CREATED<br>• STARTED<br>• PASSED<br>• FAILED<br>• INVALID<br>• EXPIRED|
+
 
 
 ### Response
