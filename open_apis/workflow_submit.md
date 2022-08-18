@@ -26,7 +26,7 @@ To have an idea of parameters, customers can go check the published workflow sum
 ### Request Headers
 | field name           | description                                     |
 |:------------------|:------------------------------------------------|
-| access-key        | access-key for authentication.  |
+| X-Advai-Key       | access-key for authentication.  |
 | content-type      | application/json;charset=UTF-8                       |
 
 
