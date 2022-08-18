@@ -1,3 +1,33 @@
+<style>
+  div[class~="list-table"] > ul {
+  display: table;
+  list-style: none;
+  width: 100%;
+  margin: 1em 0;
+  padding: 0;
+}
+
+div[class~="list-table"] > ul > li {
+    display: table-row-group;
+}
+
+div[class~="list-table"]  > ul > li:nth-child(even) {
+    background-color: #eee;
+}
+div[class~="list-table"]  > ul > li:nth-child(odd) {
+    background-color: #fff;
+}
+
+div[class~="list-table"] > ul > li > ul {
+    display: table-row;
+}
+
+div[class~="list-table"] > ul > li > ul > li {
+  display: table-cell;
+  padding: 5px;
+}
+
+</style>
 
 
 # Workflow Event Callback 
@@ -65,36 +95,7 @@ Currently, we only supports static access-key for authentication. If you have mo
 
 
 #### `payLoad` attributes
-<style>
-  div[class~="list-table"] > ul {
-  display: table;
-  list-style: none;
-  width: 100%;
-  margin: 1em 0;
-  padding: 0;
-}
 
-div[class~="list-table"] > ul > li {
-    display: table-row-group;
-}
-
-div[class~="list-table"]  > ul > li:nth-child(even) {
-    background-color: #eee;
-}
-div[class~="list-table"]  > ul > li:nth-child(odd) {
-    background-color: #fff;
-}
-
-div[class~="list-table"] > ul > li > ul {
-    display: table-row;
-}
-
-div[class~="list-table"] > ul > li > ul > li {
-  display: table-cell;
-  padding: 5px;
-}
-
-</style>
 
 <div class="list-table">
 
