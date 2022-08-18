@@ -24,7 +24,7 @@ The callback method should also be a **idempotent**, as OSP might retry to push 
 To setup callback, contact our engineer and provide the form
 
 |  Application Form   |
-|:------------|:---------|:---------|:----------------------|
+|:------------|:----------------------|
 | login name         |      |
 | Notification Type      |        |
 | Workflow ID    |        |
