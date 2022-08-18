@@ -1,6 +1,3 @@
-<div align="center">
-    <img src="css.svg" width="400" height="400" alt="css-in-readme">
-</div>
 
 # Workflow Event Callback 
 
@@ -69,32 +66,11 @@ Currently, we only supports static access-key for authentication. If you have mo
 #### `payLoad` attributes
 
 
-<div class="list-table">
+<div align="center">
+    <img src="css.svg"  alt="css-in-readme">
+</div>
 
-- - **Notification Type**
-  - **Description**
-- - NODE_EVENT
-  -
-    - id <span style="color:grey">Integer</span> Node id number in the workflow (This is only unique in a single workflow).
-    - name <span style="color:grey">String</span> Node name. 
-    - startTime<span style="color:grey">String</span> Time to start this node.
-    - endTime<span style="color:grey">String</span> End to start this node.
-    - opTime<span style="color:grey">String</span> The time when a variable associating with the node. It is only meanful for a data node and its value is the time when OSP receives responce from a remote data sources.
-    - cacheHit <span style="color:grey">String</span>: `true` if the the data is from cache. Otherwise `false`
-    - input <span style="color:grey">Map</span> A generic key-value map for input parameters. 
-    - output <span style="color:grey">Map</span> A raw response from remote datasource, or local cache if `cachehit` is true. 
-  
-- - `WORKFLOW_EVENT`
-  - 
-    - status <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW. 
-    - stage <span style="color:grey">Enum</span> Workflow execution stage, and current optional values: `FINISH`, `ERROR`, `TIMEOUT`
-    
-- - `TRANSACTION_EVENT`
-  - 
-    - status <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW. 
-    - stage <span style="color:grey">Enum</span> Workflow execution stage, and current optional values: `FINISH`, `ERROR`, `TIMEOUT`
-
-                                  
+           
 
 ### Response
 
