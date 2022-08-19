@@ -55,10 +55,11 @@ Currently, we only supports static access-key for authentication. If you have mo
 |:------------|:---------|:---------|:----------------------|
 | tenantId         | String    | true    | Customer Id       |
 | referenceId      | String    | false     | a unqiue id identifies a user       |
-| transactionId    | String    | true     | transaction id       |
+| transId    | String    | true     | transaction id       |
+| flowId    | Long    | false     | workflow id if        |
 | notificationType | Enum String  | true     | Optional values: NODE_EVENT, WORKFLOW_EVENT, TRANSACTION_EVENT, CASE_EVENT       |
 | payLoad          | Map      | true     | A general parameter input map       |
-| timestamp        | Date      | true     | A general parameter input map       |
+| timestamp        | Long      | true     | A general parameter input map       |
 
 
 
@@ -73,9 +74,9 @@ Currently, we only supports static access-key for authentication. If you have mo
 
 | Notification Type     | Description                                                                                                                |
 |:----------------------|:---------------------------------------------------------------------------------------------------------------------------|
-| **NODE_EVENT**        | **id** <span style="color:grey">Integer</span>: Node id number in the workflow (This is only unique in a single workflow).<br>• name <span style="color:grey">String</span> Node name.<br>•startTime<span style="color:grey">String</span> Time to start this node.<br>•endTime<span style="color:grey">String</span> End to start this node.<br>• opTime<span style="color:grey">String</span> The time when a variable associating with the node. It is only meanful for a data node and its value is the time when OSP receives responce from a remote data sources.<br>• cacheHit <span style="color:grey">String</span>: `true` if the the data is from cache. Otherwise `false`.<br>• input <span style="color:grey">Map</span> A generic key-value map for input parameters.<br>• output <span style="color:grey">Map</span> A raw response from remote datasource, or local cache if `cachehit` is true. |
-| **WORKFLOW_EVENT**    | • status <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br>•stage <span style="color:grey">Enum</span> Workflow execution stage, and current optional values: `FINISH`, `ERROR`, and `TIMEOUT`                                                            |
-| **TRANSACTION_EVENT** | status <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br> ratorId: operator id.  |
+| **NODE_EVENT**        | • **id** <span style="color:grey">Integer</span>: Node id number in the workflow (This is only unique in a single workflow).<br>• **name** <span style="color:grey">String</span> Node name.<br>•startTime<span style="color:grey">String</span> Time to start this node.<br>• **endTime**<span style="color:grey">String</span> End to start this node.<br>• opTime<span style="color:grey">String</span> The time when a variable associating with the node. It is only meanful for a data node and its value is the time when OSP receives responce from a remote data sources.<br>• **cacheHit** <span style="color:grey">String</span>: `true` if the the data is from cache. Otherwise `false`.<br>• **input** <span style="color:grey">Map</span> A generic key-value map for input parameters.<br>• **output** <span style="color:grey">Map</span> A raw response from remote datasource, or local cache if `cachehit` is true. |
+| **WORKFLOW_EVENT**    | • **status** <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br>• **stage** <span style="color:grey">Enum</span> Workflow execution stage, and current optional values: `FINISH`, `ERROR`, and `TIMEOUT`                                                            |
+| **CASE_EVENT** | • **status** <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br> operatorId: operator id.  |
 
 
 
@@ -96,7 +97,7 @@ OSP only relies on ** HTTP response code **(200, 5XX) instead of response body's
 
 # Example
 
-## Request:
+## Sample Request Body for `NODE_EVENT`:
 
 
 ```shell
@@ -104,8 +105,11 @@ OSP only relies on ** HTTP response code **(200, 5XX) instead of response body's
 {
   "tenantId": 
   "transId": "6be712d68c64058b",
+  "referenceId": "1000",
   "flowId": "104",
-  "node": {
+  "notificationType": "NODE_EVENT",
+  "timestamp": "1660727267"
+  "payLoad": {
     "id": 28907,
     "name": "8:Blacklist Check",
     "startTime": "2022-08-12T10:12:16.827Z",
