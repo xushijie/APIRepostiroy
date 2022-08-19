@@ -71,11 +71,11 @@ Currently, we only supports static access-key for authentication. If you have mo
 </div>
 
 
-|Notification Type|  Description|
-|:------------|:------------|
-|**NODE_EVENT** | id <span style="color:grey">Integer</span> Node id number in the workflow (This is only unique in a single workflow).|
-|**WORKFLOW_EVENT** |Jumio’s reference number of the enrollment transaction (ID)|
-|**TRANSACTION_EVENT** |Possible values:<br>• CREATED<br>• STARTED<br>• PASSED<br>• FAILED<br>• INVALID<br>• EXPIRED|
+| Notification Type     | Description                                                                                                                |
+|:----------------------|:---------------------------------------------------------------------------------------------------------------------------|
+| **NODE_EVENT**        | **id** <span style="color:grey">Integer</span>: Node id number in the workflow (This is only unique in a single workflow).<br>• name <span style="color:grey">String</span> Node name.<br>•startTime<span style="color:grey">String</span> Time to start this node.<br>•endTime<span style="color:grey">String</span> End to start this node.<br>• opTime<span style="color:grey">String</span> The time when a variable associating with the node. It is only meanful for a data node and its value is the time when OSP receives responce from a remote data sources.<br>• cacheHit <span style="color:grey">String</span>: `true` if the the data is from cache. Otherwise `false`.<br>• input <span style="color:grey">Map</span> A generic key-value map for input parameters.<br>• output <span style="color:grey">Map</span> A raw response from remote datasource, or local cache if `cachehit` is true. |
+| **WORKFLOW_EVENT**    | • status <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br>•stage <span style="color:grey">Enum</span> Workflow execution stage, and current optional values: `FINISH`, `ERROR`, and `TIMEOUT`                                                            |
+| **TRANSACTION_EVENT** | status <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br> ratorId: operator id.  |
 
 
 
