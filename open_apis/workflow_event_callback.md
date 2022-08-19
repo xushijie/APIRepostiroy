@@ -56,10 +56,10 @@ Currently, we only supports static access-key for authentication. If you have mo
 | tenantId         | String    | true    | Customer Id       |
 | referenceId      | String    | false     | a unqiue id identifies a user       |
 | transId    | String    | true     | transaction id       |
-| flowId    | Long    | false     | workflow id if        |
+| flowId    | Long    | false     | workflow id if exists       |
 | notificationType | Enum String  | true     | Optional values: NODE_EVENT, WORKFLOW_EVENT, TRANSACTION_EVENT, CASE_EVENT       |
-| payLoad          | Map      | true     | A general parameter input map       |
-| timestamp        | Long      | true     | A general parameter input map       |
+| payLoad          | Map      | true     | A general structure based on the `notificationType`       |
+| timestamp        | Long      | true     | Timestamp       |
 
 
 
@@ -74,9 +74,9 @@ Currently, we only supports static access-key for authentication. If you have mo
 
 | Notification Type     | Description                                                                                                                |
 |:----------------------|:---------------------------------------------------------------------------------------------------------------------------|
-| **NODE_EVENT**        | • **id** <span style="color:grey">Integer</span>: Node id number in the workflow (This is only unique in a single workflow).<br>• **name** <span style="color:grey">String</span> Node name.<br>•startTime<span style="color:grey">String</span> Time to start this node.<br>• **endTime**<span style="color:grey">String</span> End to start this node.<br>• opTime<span style="color:grey">String</span> The time when a variable associating with the node. It is only meanful for a data node and its value is the time when OSP receives responce from a remote data sources.<br>• **cacheHit** <span style="color:grey">String</span>: `true` if the the data is from cache. Otherwise `false`.<br>• **input** <span style="color:grey">Map</span> A generic key-value map for input parameters.<br>• **output** <span style="color:grey">Map</span> A raw response from remote datasource, or local cache if `cachehit` is true. |
+| **NODE_EVENT**        | • **id** <span style="color:grey">Integer</span>: Node id number in the workflow (This is only unique in a single workflow).<br>• **name** <span style="color:grey">String</span> Node name.<br>•startTime<span style="color:grey">String</span> Time to start this node.<br>• **endTime**<span style="color:grey">String</span> End to start this node.<br>• **opTime** <span style="color:grey">String</span> The time when a variable associating with the node. It is only meanful for a data node and its value is the time when OSP receives responce from a remote data sources.<br>• **cacheHit** <span style="color:grey">String</span>: `true` if the the data is from cache. Otherwise `false`.<br>• **input** <span style="color:grey">Map</span> A generic key-value map for input parameters.<br>• **output** <span style="color:grey">Map</span> A raw response from remote datasource, or local cache if `cachehit` is true. |
 | **WORKFLOW_EVENT**    | • **status** <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br>• **stage** <span style="color:grey">Enum</span> Workflow execution stage, and current optional values: `FINISH`, `ERROR`, and `TIMEOUT`                                                            |
-| **CASE_EVENT** | • **status** <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br> operatorId: operator id.  |
+| **CASE_EVENT** | • **status** <span style="color:grey">Enum</span> Optional values: APPROVE, REJECT, REVIEW.<br> **operatorId**: operator id.  |
 
 
 
@@ -89,7 +89,7 @@ Currently, we only supports static access-key for authentication. If you have mo
 | message           | String |  leave empty                                 |
 | data              | String |  Leave empty                                  |
 
-OSP only relies on ** HTTP response code **(200, 5XX) instead of response body's code here, and: 
+OSP only relies on **HTTP response code**(200, 5XX) instead of response body's code here, and: 
 1. confirm event have delivered successfully and then next event, if it is 200;
 2. retry delivery with maximal 3 times if it is 5XX.
 
