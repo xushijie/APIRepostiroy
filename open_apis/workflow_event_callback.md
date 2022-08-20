@@ -2,9 +2,9 @@
 # Workflow Event Callback 
 
 ## Description
-This page describe how to setup a callback in OSP and the required callback method schema to make the communication work between OSP and the customer system.
+This page describes how to setup a callback in OSP and the required callback method schema to make the communication work between OSP and the customer system.
 
-A callback method is public API, **provided by customer system**, and its purpose is to receive events from OSP for the awareness of their task's progress. These events can be: 
+A callback method is a public API, **provided by customer system**, and its allows OSP to submit task events back to cusomter systems. These events can be: 
 - A workflow node execution completion. 
 - Workflow execution ends (e.g. success, fail), and 
 - transaction/case status changes.
