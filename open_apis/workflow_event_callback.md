@@ -58,19 +58,13 @@ Currently, we only support static access-key for authentication. Contact us f yo
 | transId    | String    | true     | transaction id       |
 | flowId    | Long    | false     | workflow id if exists       |
 | notificationType | Enum String  | true     | Optional values: NODE_EVENT, WORKFLOW_EVENT, TRANSACTION_EVENT, CASE_EVENT       |
-| payLoad          | Map      | true     | A general structure based on the `notificationType`       |
+| data             | Map      | true     | A general structure based on the `notificationType`       |
 | timestamp        | Long      | true     | Timestamp       |
 
 
 
 
 #### `payLoad` attributes
-
-
-<div align="center">
-    <img src="css.svg" width="400" height="400" alt="css-in-readme">
-</div>
-
 
 | Notification Type     | Description                                                                                                                |
 |:----------------------|:---------------------------------------------------------------------------------------------------------------------------|
@@ -86,7 +80,7 @@ Currently, we only support static access-key for authentication. Contact us f yo
 | name              | type   |    description                                            |
 |:------------------|:-------|:-------------------------------------------------------|
 | code              | String |  SUCCESS:deal request success.               |
-| message           | String |  leave empty                                 |
+| message           | String |  Leave empty                                 |
 | data              | String |  Leave empty                                  |
 
 OSP only relies on **HTTP response code**(200, 5XX) instead of response body's code here, and: 
@@ -108,7 +102,7 @@ OSP only relies on **HTTP response code**(200, 5XX) instead of response body's c
   "flowId": "104",
   "notificationType": "NODE_EVENT",
   "timestamp": "1660727267"
-  "payLoad": {
+  "data": {
     "id": 28907,
     "name": "8:Blacklist Check",
     "startTime": "2022-08-12T10:12:16.827Z",
