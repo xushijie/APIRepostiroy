@@ -64,7 +64,7 @@ Currently, we only support static access-key for authentication. Contact us f yo
 
 
 
-#### `payLoad` attributes
+#### `data` attributes
 
 | Notification Type     | Description                                                                                                                |
 |:----------------------|:---------------------------------------------------------------------------------------------------------------------------|
