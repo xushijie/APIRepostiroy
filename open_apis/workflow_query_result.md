@@ -256,7 +256,8 @@ curl --location --request GET 'https://api.advai.net/intl/openapi/journey/v1/que
       "sc_tu_leg_619_pre": 0
     },
     "attachmentFiles": null,
-    "referenceId": null
+    "referenceId": null,
+    "transId": "19d1fa4666fad51b"
   },
  "transactionId":"19d1fa4666fad51b",
   "timestamp": "2022-05-19T04:14:31.378+00:00"
