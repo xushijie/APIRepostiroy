@@ -33,7 +33,6 @@ Retrieve a transaction report by `transactionId`.
 | data.appFormInfo | Json | The filled form information by a client if it is configured in the digital onboarding journey | 
 | data.attachmentFiles | Json | Additional documents information if they are configured in the digital onboarding journey | 
 
-                        |
 
 
 ## domain
