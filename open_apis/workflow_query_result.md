@@ -1,6 +1,4 @@
 
-**This document is still WIP.**
-
 # Description
 Retrieve a transaction report by `transactionId`. 
 
