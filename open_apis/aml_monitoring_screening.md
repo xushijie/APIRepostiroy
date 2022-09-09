@@ -47,7 +47,7 @@ Regardless of screening and monitoring, OSP would add the current user to our pr
 
 
 ## Request Body
-| name        | type      | require | example       | description                                                                                                   |
+| name        | type      | required | example       | description                                                                                                   |
 |:------------|:---------|:---------|:--------|:----------------------------------------------------------------------------------------------------|
 | mode        | String   | true     | 1         | Single check or Monitoring.  1 for single check only ；2 for monitoring;                        |
 | referenceId | String   | false    | "123"         | Unique identification in your system. `referenceId` is  required when `mode` is 2                             |
@@ -59,7 +59,16 @@ Regardless of screening and monitoring, OSP would add the current user to our pr
 | score       | String    | false   | 10            | The similarity between the name input with the name corresponding to the record, ranging from 0 to 1 (0-100%) |
 | regionList  | String[]  | false   | ["Indonesia"] | List of country or region names to be searched                                                            |
 | contentList | String[]  | false   | ["SAN"]       | The array format can be any combination of SAN, SIP, PEP, OOL, or OEL                                     |
-| intervalTime| int       | false   | 1             |  Monitor interval time, default is 1 day.                                                                   |
+| intervalTime| int       | false   | 1             |  Monitor interval time, default is 1 day.                                                    |
+| phoneNumber| String       | false   |              |  Customer cellphone number must be inputted numbers. (country code + area code + number)   |
+| email | string            |false  |    |   General email format with @ and . eg. example@example.com    | 
+| address    |   String     | false |    |  Address must be inputted as detail as possible (RT,RW, City, District, Sub-district, Province, Postal Code) to get the most accurate result.  | 
+| postalCode |  String      | false |     | Postal Code should be a series of letters or digits or both, included in a postal address for the purpose of sorting mail | 
+| issuedCountry | String | false    |     |  Issued Country should be document issued country. Example: United States. | 
+| expiredTime  | String  | false    |     |     Expired Time must be a date which is a kind of card that is no longer valid to use because its expiration date has passed,yyyy-MM-dd.| 
+
+
+
 
 ## Response
 | name        | type     | description                                   |
