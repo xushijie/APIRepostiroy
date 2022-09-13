@@ -80,7 +80,7 @@ Currently, we only support static access-key for authentication. Contact us f yo
 
 | name              | type   |    description                                            |
 |:------------------|:-------|:-------------------------------------------------------|
-| code              | String |  SUCCESS:deal request success.               |
+| code              | String |  SUCCESS:request success.               |
 | message           | String |  Leave empty                                 |
 | data              | String |  Leave empty                                  |
 
