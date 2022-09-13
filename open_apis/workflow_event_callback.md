@@ -92,12 +92,12 @@ OSP only relies on **HTTP response code**(200, 5XX) instead of response body's c
 
 # Example
 
-## Sample Request Body for `NODE_EVENT`:
+## Sample Request Body for `NODE_EVENT` and `WORKFLOW_EVENT`:
 
 ```shell
 
 {
-  "tenantId": 
+  "tenantId": "2"
   "transId": "6be712d68c64058b",
   "referenceId": "1000",
   "flowId": "104",
@@ -142,6 +142,24 @@ OSP only relies on **HTTP response code**(200, 5XX) instead of response body's c
 }
 
 
+
+
+```
+
+```
+
+{ 
+   "data":
+        {
+            "stage": "FINISH",
+            "status": "APPROVE"
+        },
+        "flowId": 708,
+        "notificationType": "WORKFLOW_EVENT",
+        "tenantId": "9",
+        "timestamp": 1663060287849,
+        "transId": "4ff8e26d9a1af9bc"
+}
 ```
 ## Response
 ```json
