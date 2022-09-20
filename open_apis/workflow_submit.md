@@ -21,6 +21,7 @@ To have an idea of parameters, customers can go check the published workflow sum
 |:----------------------|:------------------------------|
 | api.advai.net     | Sandbox Environment           |
 | api.advance.ai    | PROD Environment in Indonesia |
+*NOTICE*:  In case the country code associated with your account is not consistent with the OSP region (e.g., Open a Philippine account in ID/SG OSP), there would be a slight variation in domain and request header. Please consult our engineers and follow the "workflow access method" page in OSP portal for detail. 
 
 
 ### Request Headers
