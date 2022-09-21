@@ -56,7 +56,7 @@ Regardless of screening and monitoring, OSP would add the current user to our pr
 | gender      | String    | false   | Male    | Male or Female                                                                                                      |
 | idNumber    | String    | false   | "13234234"    |  Identify card number                                                                                         |
 | dob         | String    | false   | 1968-01-01    | Optional Date of birth, yyyy-MM-dd, not available for type Entity                                             |
-| score       | String    | false   | 10            | The similarity between the name input with the name corresponding to the record, ranging from 0 to 1 (0-100%) |
+| score       | String    | false   | 10            | The similarity between the name input with the name corresponding to the record, ranging from 0 to 1 (0-100%). The default value is 1. |
 | regionList  | String[]  | false   | ["Indonesia"] | List of country or region names to be searched                                                            |
 | contentList | String[]  | false   | ["SAN"]       | The array format can be any combination of SAN, SIP, PEP, OOL, or OEL                                     |
 | intervalTime| int       | false   | 1             |  Monitor interval time, default is 1 day.                                                    |
