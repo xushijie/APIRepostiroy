@@ -48,7 +48,7 @@ Retrieve a transaction report by `transactionId`.
 ## Request:
 ```shell
 
-curl --location --request GET 'https://api.advai.net/intl/openapi/journey/v1/query?transactionId=19d1fa4666fad51b' \
+curl --location --request GET 'https://api.advai.net/intl/openapi/journey/v1/query?transId=19d1fa4666fad51b' \
 --header 'X-ADVAI-KEY: XXXXXXXXXXX
 
 ```
