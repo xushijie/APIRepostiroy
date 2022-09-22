@@ -3,7 +3,7 @@
 Retrieve a transaction report by `transactionId`. 
 
 # Request
-- URI: https://{domain}/intl/openapi/v1/query
+- URI: https://{domain}/intl/openapi/journey/v1/query
 
 - METHOD: GET
 
@@ -16,7 +16,7 @@ Retrieve a transaction report by `transactionId`.
 ## Parameters
 | Parameter Name    | description                                     |
 |:------------------|:------------------------------------------------|
-| transId        | Transaction Id returned when you submit a task.  |
+| transactionId        | Transaction Id returned when you submit a task.  |
 
 
 ## Response
