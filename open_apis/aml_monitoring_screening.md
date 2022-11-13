@@ -50,7 +50,7 @@ Regardless of screening and monitoring, OSP would add the current user to our pr
 | name        | type      | required | example       | description                                                                                                   |
 |:------------|:---------|:---------|:--------|:----------------------------------------------------------------------------------------------------|
 | mode        | String   | true     | 1         | Single check or Monitoring.  1 for single check only ；2 for monitoring;                        |
-| referenceId | String   | false    | "123"         | Unique identification in your system. `referenceId` is  required when `mode` is 2                             |
+| referenceId | String   | false    | "123"         | an unique identification in your system for each customer. `referenceId` is  required when `mode` is 2                             |
 | name        | String   | true     | David         | Name of the person or the entity                                                                              |
 | type        | String[]  | false   | ["Person"]    | List ["Person"] or ["Entity"]                                                                                 |
 | gender      | String    | false   | Male    | Male or Female                                                                                                      |
