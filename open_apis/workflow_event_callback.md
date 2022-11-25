@@ -125,7 +125,7 @@ OSP only relies on **HTTP response code**(200, 5XX) instead of response body's c
       "code": "SUCCESS",
       "message": "OK",
       "data": {
-        "recommendation": "REJECT",
+        "recommendation":[
           {
             "eventTime": "10/2018",
             "productType": "CASH_LOAN",
