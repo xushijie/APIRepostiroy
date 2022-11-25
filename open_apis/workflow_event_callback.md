@@ -97,12 +97,12 @@ OSP only relies on **HTTP response code**(200, 5XX) instead of response body's c
 ```shell
 
 {
-  "tenantId": "2"
+  "tenantId": "2",
   "transId": "6be712d68c64058b",
   "referenceId": "1000",
   "flowId": "104",
   "notificationType": "NODE_EVENT",
-  "timestamp": "1660727267"
+  "timestamp": "1660727267",
   "data": {
     "id": 28907,
     "name": "8:Blacklist Check",
