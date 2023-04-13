@@ -93,9 +93,9 @@ Regardless of screening and monitoring, OSP would add the current user to our pr
 | INSUFFICIENT_BALANCE | 200 | Insufficient balance |
 | SERVICE_BUSY | 200 | backend service is busy and unable to handle, please retry later |
 | OVER_QUERY_LIMIT | 200 | Too much query times |
-| INPUT_ERROR | 400 |  Parameter error    | 
-｜ INTERNAL_BIZ_ERROR or INTERNAL_ERROR ｜ 500 ｜ Exception in backend, and please contact our engineers ｜ 
-｜ REMOTE_CALL_ERROR ｜500 | Exception occurs in service communication.  please retry later   ｜ 
+| INPUT_ERROR | 400 |  Parameter error   |  
+| INTERNAL_BIZ_ERROR or INTERNAL_ERROR ｜ 500 ｜ Exception in backend, and please contact our engineers|
+| REMOTE_CALL_ERROR ｜500 | Exception occurs in service communication.  please retry later |
 
 
 
