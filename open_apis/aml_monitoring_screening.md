@@ -85,7 +85,21 @@ Regardless of screening and monitoring, OSP would add the current user to our pr
 | api.advai.net | Sandbox Environment                                |
 | api.advance.ai | PROD Environment in Indonesia                               |
 
+## Code List
 
+| Error Code            | HTTP code | description                                     | 
+|:------------------|:----|:--------------------------------------------|
+| IAM_FAILED | 200 | no permission to access this API, ask our OP for help|
+| INSUFFICIENT_BALANCE | 200 | Insufficient balance |
+| SERVICE_BUSY | 200 | backend service is busy and unable to handle, please retry later |
+| OVER_QUERY_LIMIT | 200 | Too much query times |
+| INPUT_ERROR | 400 |  Parameter error    | 
+｜ INTERNAL_BIZ_FAILURE/INERNAL_ERROR ｜ 500 ｜ Exception in backend, and please contact our engineers ｜ 
+｜ REMOTE_CALL_ERROR ｜ Exception occurs in service communication.  please retry later   ｜ 
+
+
+
+    
 # Example
 
 ## Request:
