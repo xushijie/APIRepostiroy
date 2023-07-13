@@ -59,16 +59,6 @@ To have an idea of parameters, customers can go check the published workflow sum
 | data.status      | String  | Workflow stage. You should get "PROCESSING" | 
 
 ### Http code vs Http ResponseBody Code
-| Http Code              | ResponseBody Code   |    
-|:------------------|:-------|
-| 200              | SUCCESS |
-| 400           | - INPUT_ERROR: illegal parameter                               |
-|               | - BIZ_FAILURE: illegal parameter and cause backend failure               |
-| data              |                               |
-| data.transId      |  | 
-| data.result      |  |
-| data.journeyId   |  |  
-| data.status      |  | 
 
 <table>
 	<thead>
