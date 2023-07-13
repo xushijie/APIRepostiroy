@@ -59,7 +59,6 @@ To have an idea of parameters, customers can go check the published workflow sum
 | data.status      | String  | Workflow stage. You should get "PROCESSING" | 
 
 ### Http code vs Http ResponseBody Code
-
 <table>
 	<thead>
 		<tr><th>HTTP Code</th> <th>Response Body Code</th></tr>
