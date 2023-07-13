@@ -70,7 +70,24 @@ To have an idea of parameters, customers can go check the published workflow sum
 | data.journeyId   |  |  
 | data.status      |  | 
 
+<table>
+	<thead>
+		<tr><th>HTTP Code</th> <th>Response Body Code</th></tr>
+	</thead>
+	<tbody>
+		<tr>
+            		<td rowspan=2>400</td>
+            		<td>INPUT_ERROR: illegal parameters after validation</td>
+        	</tr>
+		<tr><td>BIZ_FAILURE: backend failure triggered by illegal parameters</td></tr>
+		<tr><td>401</td><td>UNAUTHORIZED</td></tr>
+		<tr><td>403</td><td>FORBIDDEN: You do not have permission for this operation. </td></tr>
+		<tr><td rowspan=3>500</td><td>INTERNAL_BIZ_FAILURE: internal failure caused by data, please raise a ticket. </td></tr>
+  		<tr><td>INTERNAL_ERROR: Internal failured due to code bug during execution, please raise a ticket </td></tr>
+      		<tr><td>REMOTE_CALL_ERROR: internal failure caused by 3rd-party, or network, please raise a ticket</td></tr>
 
+	</tbody>
+</table>
 
 
 # Example
