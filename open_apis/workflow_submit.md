@@ -50,13 +50,26 @@ To have an idea of parameters, customers can go check the published workflow sum
 
 | name              | type   |    description                                            |
 |:------------------|:-------|:-------------------------------------------------------|
-| code              | String |  SUCCESS:deal request success  ERROR: deal request fail |
+| code              | String |  Response body code |
 | message           | String |  "OK" or error tip                                      |
 | data              | String |  Detail response body                                          |
 | data.transId      | String |  transaction id  | 
 | data.result      | Json[]  | The detail list of entities to be matched   |
 | data.journeyId   | Integer | Workflow id from parameter |  
 | data.status      | String  | Workflow stage. You should get "PROCESSING" | 
+
+### Http code vs Http ResponseBody Code
+| Http Code              | ResponseBody Code   |    
+|:------------------|:-------|
+| 200              | SUCCESS |
+| 400           | - INPUT_ERROR: illegal parameter                               |
+|               | - BIZ_FAILURE: illegal parameter and cause backend failure               |
+| data              |                               |
+| data.transId      |  | 
+| data.result      |  |
+| data.journeyId   |  |  
+| data.status      |  | 
+
 
 
 
